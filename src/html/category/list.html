@@ -21,8 +21,8 @@
             <div class="body course-category">
                 <!-- 面包屑 -->
                 <ol class="breadcrumb">
-                    <li><a href="javascript:;">课程管理</a></li>
-                    <li class="active">课程分类</li>
+                    <li><a href="javascript:;">学科管理</a></li>
+                    <li class="active">编辑学科</li>
                 </ol>
                 <div class="panel panel-default">
                     <table class="table table-bordered">
@@ -57,6 +57,7 @@
                 {{if category.cg_pid==0}}
                 <td class="text-left">
                     {{category.cg_name}}</td>
+
                 {{/if}} {{if category.cg_pid!=0}}
                 <td class="text-left">&nbsp;&nbsp;├&nbsp;{{category.cg_name}}</td>
                 {{/if}}
@@ -65,7 +66,8 @@
                 <td>{{category.cg_is_hide}}</td>
                 <td>{{category.level}}</td>
                 <td>
-                    <a href="/dist/html/category/edit.html" class="btn btn-info btn-xs">编辑</a>
+                    <!-- <a href="/dist/html/category/edit.html" class="btn btn-info btn-xs">编辑</a> -->
+                    <a href="/dist/html/category/edit.html?cg_id={{category.cg_id}}" class="btn btn-info btn-xs">编辑</a>
                 </td>
             </tr>
 
