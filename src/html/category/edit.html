@@ -31,11 +31,12 @@
     <!-- 添加学科列表的模板 -->
     <script id="category-edit-tpl" type="text/tpl">
         <div class="category-add">
-            <form action="" class="form-horizontal">
+            <form id="category-edit-form" action="/v6/category/modify" method="post" class="form-horizontal">
+                <input value="{{cg_id}}" name="cg_id" type="hidden">
                 <div class="form-group">
                     <label for="" class="col-xs-4 control-label">名称</label>
                     <div class="col-xs-3">
-                        <input name="cg_name" value="{{cg_name}}" type="text" class="form-control input-sm" placeholder="填写分类名称">
+                        <input id="cg_name" name="cg_name" value="{{cg_name}}" type="text" class="form-control input-sm" placeholder="填写分类名称">
                     </div>
                 </div>
                 <div class="form-group">
@@ -43,9 +44,8 @@
                     <div class="col-xs-2">
 
                         {{each $data categoryTop i}}
-                        <select name="" class="form-control input-sm">
+                        <select name="cg_pid" class="form-control input-sm">
                         
-                        <option value="0">顶级学科</option>
                         <option value="{{categoryTop.cg_id}}
                         {{cg_pid==categoryTop.cg_id?'selected':''}}
                         
@@ -57,17 +57,17 @@
                 <div class="form-group">
                     <label for="" class="col-xs-4 control-label">排序</label>
                     <div class="col-xs-1">
-                        <input name="" value="{{cg_order}}" type="text" class="form-control input-sm" value="10">
+                        <input name="cg_order" value="{{cg_order}}" type="text" class="form-control input-sm" value="10">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="" class="col-xs-4 control-label">是否显示</label>
                     <div class="col-xs-3">
                         <label class="checkbox-inline">
-                                    <input value="" {{cg_is_hide==0?'checked':''}} type="radio"> 是
+                                    <input name="cg_is_hide" value="0" {{cg_is_hide==0?'checked':''}} type="radio"> 是
                                 </label>
                         <label class="checkbox-inline">
-                                    <input value="" {{cg_is_hide!=0?'checked':''}} type="radio"> 否
+                                    <input name="cg_is_hide" value="1" {{cg_is_hide!=0?'checked':''}} type="radio"> 否
                                 </label>
                     </div>
                 </div>
