@@ -12,7 +12,8 @@
  * 3、然后把对象中的名字与头像设置到导航对应的标签中
  * */
 var userinfoStr = localStorage.getItem('userinfo');
-var userinfo = JSON.parse(userinfoStr);
+// 这面这里加多一个默认路径图片不然获取到前边的，页面就一直显示混乱
+var userinfo = JSON.parse(userinfoStr) || { tc_avatar: '/public/img/default.png' };
 $('.aside img').attr('src', userinfo.tc_avatar);
 $('.aside h4').text(userinfo.tc_name);
 
@@ -22,7 +23,7 @@ $('.aside h4').text(userinfo.tc_name);
  * 2、事件触发时让它的下一个兄弟元素ul显示隐藏切换
  * */
 $('.navs a').on('click', function() {
-  $(this).next('ul').slideToggle();
+    $(this).next('ul').slideToggle();
 });
 
 /**

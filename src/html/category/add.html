@@ -76,8 +76,8 @@
         </div>
     </div>
     <script id="select_tpl" type="text/tpl">
-        {{each $data categoryTop i}}
         <option value="0">顶级学科</option>
+        {{each $data categoryTop i}}
         <option value="{{categoryTop.cg_id}}">{{categoryTop.cg_name}}</option>
         {{/each}}
 

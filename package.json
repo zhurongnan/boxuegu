@@ -32,5 +32,13 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhurongnan/boxuegu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhurongnan/boxuegu/issues"
+  },
+  "homepage": "https://github.com/zhurongnan/boxuegu#readme",
   "description": ""
 }

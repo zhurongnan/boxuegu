@@ -1,4 +1,4 @@
-// / 导入各种包
+// 导入各种包
 var gulp = require('gulp');
 var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
@@ -15,16 +15,18 @@ var htmlReplace = require('gulp-html-replace');
 gulp.task('html', function() {
     gulp.src(['src/**/*.html', 'index.html'])
         .pipe(htmlReplace({
-            style: gulp.src('src/html/common/style.html'),
-            aside: gulp.src('src/html/common/aside.html'),
-            header: gulp.src('src/html/common/header.html')
+          style: gulp.src('src/html/common/style.html'),
+          aside: gulp.src('src/html/common/aside.html'),
+          header: gulp.src('src/html/common/header.html'),
+          courseEditHeader: gulp.src('src/html/common/course/header.html'),
+          courseEditAside: gulp.src('src/html/common/course/aside.html')
         }))
-        .pipe(htmlmin({
-            collapseWhitespace: true, // 去掉空白字符
-            minifyJS: true, //压缩页面JS
-            minifyCSS: true, //压缩页面CSS
-            removeComments: true //清除HTML注释
-        }))
+//      .pipe(htmlmin({
+//          collapseWhitespace: true, // 去掉空白字符
+//          minifyJS: true,//压缩页面JS
+//          minifyCSS: true,//压缩页面CSS
+//          removeComments: true//清除HTML注释
+//      }))
         .pipe(gulp.dest('dist'));
 });
 
@@ -41,7 +43,14 @@ var jsLibs = [
     'node_modules/art-template/lib/template-web.js',
     'node_modules/jquery/dist/jquery.js',
     'node_modules/bootstrap/dist/js/bootstrap.js',
-    'node_modules/jquery-form/dist/jquery.form.min.js'
+    'node_modules/jquery-form/dist/jquery.form.min.js',
+    'node_modules/jquery.cookie/jquery.cookie.js',
+    'node_modules/nprogress/nprogress.js',
+    'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js',
+    'node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js',
+    'lib/jquery-Jcrop/js/Jcrop.js',
+    'lib/jquery-region/jquery.region.js',
+    'lib/jquery-uploadify/jquery.uploadify.js',
 ];
 // 合并所有的第三方包为一个js
 gulp.task('jsLib', function() {

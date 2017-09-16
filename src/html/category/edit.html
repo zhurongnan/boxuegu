@@ -32,11 +32,11 @@
     <script id="category-edit-tpl" type="text/tpl">
         <div class="category-add">
             <form id="category-edit-form" action="/v6/category/modify" method="post" class="form-horizontal">
-                <input value="{{cg_id}}" name="cg_id" type="hidden">
+                <input value="{{categoryTop.cg_id}}" name="categoryTop.cg_id" type="hidden">
                 <div class="form-group">
                     <label for="" class="col-xs-4 control-label">名称</label>
                     <div class="col-xs-3">
-                        <input id="cg_name" name="cg_name" value="{{cg_name}}" type="text" class="form-control input-sm" placeholder="填写分类名称">
+                        <input id="categoryTop.cg_name" name="categoryTop.cg_name" value="{{categoryTop.cg_name}}" type="text" class="form-control input-sm" placeholder="填写分类名称">
                     </div>
                 </div>
                 <div class="form-group">
@@ -57,7 +57,7 @@
                 <div class="form-group">
                     <label for="" class="col-xs-4 control-label">排序</label>
                     <div class="col-xs-1">
-                        <input name="cg_order" value="{{cg_order}}" type="text" class="form-control input-sm" value="10">
+                        <input name="categoryTop.cg_order" value="{{categoryTop.cg_order}}" type="text" class="form-control input-sm" value="10">
                     </div>
                 </div>
                 <div class="form-group">
